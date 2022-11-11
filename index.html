@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <script>
+        window.addEventListener("load", function(){
+          
+            fetch('http://localhost:8000/addtask', 
+        {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json',
+              "authorization" : 'Bearer eyJhbGciOiJIUzI1NiJ9.ZXRvcm8.nMsInDpczsBqZhxIEAS_CnAihovSvjgUB5O0oxOv4q0'
+            },
+            body: JSON.stringify({
+               
+                "title" : "hiya",
+                "description" : "Hhahhshdhdh"
+                
+            }),
+        })
+        .then(response => response.text())
+        .then(res => { 
+            console.log(res)
+        })
+        })
+    </script>
+</body>
+</html>
